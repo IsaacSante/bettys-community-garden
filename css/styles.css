@@ -105,3 +105,57 @@ h1 {
     margin: 0 0 0.5rem 0;
     text-transform: uppercase;
 }
+
+/* Tree outlines (assets/TO LEAFLET.svg) */
+.leaflet-container .garden-shape {
+    pointer-events: visiblePainted;
+    fill: #e0ff4f;
+    fill-opacity: 0;
+    stroke: #111;
+    stroke-width: 2;
+    stroke-opacity: 0;
+    cursor: pointer;
+    transition: fill-opacity 0.15s, stroke-opacity 0.15s;
+    vector-effect: non-scaling-stroke;
+}
+.leaflet-container .garden-shape.is-active {
+    fill-opacity: 0.45;
+    stroke-opacity: 1;
+}
+.leaflet-container .garden-shape.is-unnamed {
+    pointer-events: none;
+}
+
+.garden-label {
+    border: var(--border);
+    border-radius: 0;
+    box-shadow: 3px 3px 0px var(--text-color);
+    font-weight: 600;
+}
+
+/* map.html?debug: shape numbers */
+.shape-index {
+    background: #111;
+    color: #fff;
+    font: 700 11px/1 system-ui, sans-serif;
+    padding: 2px 4px;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+}
+
+/* Zoom-dependent permanent labels */
+.garden-label.is-pinned {
+    pointer-events: none;
+    padding: 1px 5px;
+    font-size: 11px;
+    box-shadow: 2px 2px 0px var(--text-color);
+    background: rgba(255, 255, 255, 0.9);
+}
+.garden-label.is-pinned::before {
+    display: none;
+}
+.archive-popup .popup-location {
+    margin: -0.25rem 0 0.5rem;
+    font-style: italic;
+}
+.archive-popup h3:not(:first-child) { margin-top: 0.75rem; }
